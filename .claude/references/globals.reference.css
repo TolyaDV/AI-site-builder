@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* Light theme — shadcn v2+ OKLCH format */
+:root {
+  --background: 1 0 0;
+  --foreground: 0.15 0 0;
+  --card: 1 0 0;
+  --card-foreground: 0.15 0 0;
+  --primary: 0.65 0.18 250;
+  --primary-foreground: 0.98 0 0;
+  --secondary: 0.96 0 0;
+  --secondary-foreground: 0.2 0 0;
+  --muted: 0.96 0 0;
+  --muted-foreground: 0.55 0 0;
+  --accent: 0.78 0.17 70;
+  --accent-foreground: 0.15 0 0;
+  --destructive: 0.6 0.22 27;
+  --destructive-foreground: 0.98 0 0;
+  --border: 0.92 0 0;
+  --ring: 0.65 0.18 250;
+  --radius: 0.5rem;
+}
+
+/* Dark theme — generated via L_dark = 1 - L_light, C_dark = C_light * 0.85 */
+.dark {
+  --background: 0.12 0 0;
+  --foreground: 0.96 0 0;
+  --card: 0.15 0 0;
+  --card-foreground: 0.96 0 0;
+  --primary: 0.7 0.15 250;
+  --primary-foreground: 0.12 0 0;
+  --secondary: 0.2 0 0;
+  --secondary-foreground: 0.96 0 0;
+  --muted: 0.2 0 0;
+  --muted-foreground: 0.6 0 0;
+  --accent: 0.72 0.14 70;
+  --accent-foreground: 0.96 0 0;
+  --destructive: 0.55 0.19 27;
+  --destructive-foreground: 0.96 0 0;
+  --border: 0.25 0 0;
+  --ring: 0.7 0.15 250;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Default focus ring */
+:focus-visible {
+  outline: 2px solid oklch(var(--ring));
+  outline-offset: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+}

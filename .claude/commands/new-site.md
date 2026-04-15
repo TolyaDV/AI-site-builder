@@ -54,8 +54,7 @@ argument-hint: (без аргументів)
   - Landing → одна сторінка `src/app/page.tsx` із секціями з брифу у заданому порядку.
   - Multipage → окрема `src/app/<route>/page.tsx` для кожної сторінки з брифу.
   - Для кожної: унікальні `metadata` (title/description), реальний контент, OG-картинка.
-- **SEO-мінімум**: `next-sitemap.config.js`, `public/robots.txt`, `public/og-image.png` (заглушка 1200×630 — за потреби згенеруй SVG).
-- **404 сторінка** — брендована, не дефолтна.
+- **Production-checklist**: застосуй усі пункти з `.claude/references/production-checklist.md`, релевантні до створення (метадані, OG, favicon, 404, a11y, аналітика, форми). Legal і чисту контент-перевірку можна відкласти до `/deploy`, але все технічне — зараз.
 
 ## Крок 5: Favicon і OG-image
 - Створи `src/app/icon.tsx` або `public/favicon.ico` — брендована іконка (використай основний колір палітри, першу літеру назви або простий символ з ніші).

@@ -47,14 +47,12 @@ Next.js 15 (App Router), TypeScript, Tailwind CSS, shadcn/ui, next/font, next/im
 - Footer: навігація, контакти, соцмережі, legal посилання, копірайт
 
 # Дизайн
-design-system.md генерується автоматично під час /new-site на основі брифу.
-Tailwind-токени в tailwind.config.ts ОБОВ'ЯЗКОВО синхронізуй з design-system.md.
-Фіксовані дефолти (spacing, breakpoints, shadows, motion, CVA-patterns, формат кольорів) — див. `.claude/references/design-defaults.md`.
-`src/app/globals.css` створюється копіюванням `.claude/references/globals.reference.css` і заміною OKLCH-значень на актуальні з design-system.md.
+`design-system.md` створюється і оновлюється скілом `design-system` (три режими: init / intake / revise). Скіл сам синхронізує `design-system.md` ↔ `tailwind.config.ts` ↔ `src/app/globals.css` ↔ `src/app/layout.tsx`.
+Юзерські референси (Hero, форми, карточки, шрифти) складаються у `./design-refs/<category>/<name>.md` пер-сайт — скіл туди пише аналіз і використовує як бібліотеку для майбутніх правок.
+Фіксовані дефолти (spacing, breakpoints, shadows, motion, CVA-patterns, формат кольорів) — див. `.claude/references/design-defaults.md`. Їх скіл тільки читає, не генерує.
 
 # Команди
-- `/new-site` — створити сайт з нуля (викликає `/design` і генерує `design-system.md` автоматично на Кроці 2)
-- `/design` — окремо перегенерувати або оновити `design-system.md` коли сайт вже існує
+- `/new-site` — створити сайт з нуля (бриф + дизайн-система + сторінки)
 - `/deploy` — задеплоїти сайт (поки git push)
 
 # Обмеження
